@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>EpiDogs Shop - BackOffice</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,12 +11,158 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <!-- INIZIO NAVBAR -->
+      <nav class="navbar navbar-expand-lg" style="background-color: #722ef5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="../Assets/logo.png" style="width: 60px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- FINE NAVBAR -->
+    </header>
+    <!-- FINE HEADER -->
+
+    <!-- INIZIO MAIN -->
+    <main class="flex-grow-1 bg-dark py-5">
+      <h1 class="text-center mb-3 text-light">EpiDogs Shop</h1>
+      <h4 class="text-center my-3 text-light">Aggiungi un cane allo shop</h4>
+      <div class="container">
+        <div class="row justify-content-center my-3">
+          <div class="col col-12 col-md-8 col-lg-6">
+            <form class="my-5" id="event-form">
+              <!-- CAMPO INPUT PER IL NOME DEL CANE -->
+              <div class="mb-4">
+                <label for="name" class="form-label text-light"
+                  >Nome cane</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="name-input"
+                  placeholder="Inserisci il nome del cane..."
+                  required
+                />
+              </div>
+              <!-- CAMPO INPUT PER LA DESCRIZIONE DEL CANE -->
+              <div class="mb-4">
+                <label for="name" class="form-label text-light"
+                  >Descrizione del cane</label
+                >
+                <textarea
+                  class="form-control"
+                  id="description"
+                  aria-describedby="description"
+                  placeholder="Inserisci la descrizione del cane..."
+                  required
+                ></textarea>
+              </div>
+              <!-- CAMPO INPUT PER LA RAZZA DEL CANE -->
+              <div class="mb-4">
+                <label for="name" class="form-label text-light"
+                  >Razza del cane</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="brand"
+                  aria-describedby="name-input"
+                  placeholder="Inserisci la razza del cane..."
+                  required
+                />
+              </div>
+              <!-- CAMPO INPUT PER L'URL DELL'IMMAGINE DEL CANE -->
+              <div class="mb-4">
+                <label for="name" class="form-label text-light"
+                  >URL dell'immagine del cane</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imageUrl"
+                  aria-describedby="name-input"
+                  placeholder="Inserisci l'URL https://placedog.net/100..."
+                  required
+                />
+              </div>
+              <!-- CAMPO INPUT PER IL PREZZO DEL CANE -->
+              <div class="mb-4">
+                <label for="name" class="form-label text-light"
+                  >Prezzo del cane</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="price"
+                  aria-describedby="name-input"
+                  placeholder="Inserisci il prezzo del cane..."
+                  required
+                />
+              </div>
+              <!-- BUTTON DI INVIO -->
+              <div class="mt-5 d-flex justify-content-center">
+                <button type="submit" class="btn btn-light">
+                  <span class="text-black fw-bold px-4 py-4">Salva</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FINE MAIN -->
+
+    <!-- INIZIO FOOTER -->
+    <footer style="background-color: #722ef5">
+      <div class="container">
+        <div class="row">
+          <div class="col col-12 text-center">
+            <p class="fw-bold m-0 my-2">
+              <img src="../Assets/logo.png" style="width: 60px" />EpiDog Shop-
+              <span id="year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FINE FOOTER -->
+
+    <!-- SCRIPTS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="./BackOffice.js"></script>
   </body>
 </html>

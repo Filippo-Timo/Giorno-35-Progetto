@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>EpiDogs Shop - Details</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,12 +11,106 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- INIZIO HEADER -->
+    <header>
+      <!-- INIZIO NAVBAR -->
+      <nav class="navbar navbar-expand-lg" style="background-color: #722ef5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="../Assets/logo.png" style="width: 60px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- FINE NAVBAR -->
+    </header>
+    <!-- FINE HEADER -->
+
+    <!-- INIZIO MAIN -->
+    <main class="flex-grow-1 bg-dark py-5">
+      <h1 class="text-center mb-3 text-light">EpiDogs Shop</h1>
+      <h4 class="text-center my-3 text-light">Dettagli del cane</h4>
+
+      <!-- CARD DEL CANE -->
+      <div class="container">
+        <div class="row justify-content-center my-3">
+          <div class="col col-12 col-md-8 col-lg-6">
+            <div class="card" style="border: 1px solid #722ef5">
+              <img
+                src="https://placedog.net/500"
+                class="card-img-top"
+                alt="concert-image"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" id="name"></h5>
+                <p class="card-text" id="description"></p>
+                <p class="card-text" id="brand"></p>
+                <p class="card-text" id="price"></p>
+                <div>
+                  <button class="btn btn-warning" onclick="editEvent()">
+                    Modifica i dettagli
+                  </button>
+                  <button class="btn btn-danger" onclick="deleteEvent()">
+                    Elimina l'annuncio
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FINE CARD DEL CANE -->
+    </main>
+    <!-- FINE MAIN -->
+
+    <!-- INIZIO FOOTER -->
+    <footer style="background-color: #722ef5">
+      <div class="container">
+        <div class="row">
+          <div class="col col-12 text-center">
+            <p class="fw-bold m-0 my-2">
+              <img src="../Assets/logo.png" style="width: 60px" />EpiDog Shop-
+              <span id="year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FINE FOOTER -->
+
+    <!-- SCRIPTS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="./details.js"></script>
   </body>
 </html>
