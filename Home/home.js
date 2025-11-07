@@ -10,12 +10,10 @@ const apiKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTBkY2U5ZmY0YmQ0NzAwMTU4NWIyMzQiLCJpYXQiOjE3NjI1MTI1NDMsImV4cCI6MTc2MzcyMjE0M30.R9nR1v_nX1LdCyzK4q4sMvjHRxGLgnI4w-qjiQeKAnQ";
 
 // CREO FUNZIONE DELETE PER IL TASTO ROSSO DELLE CARDS
-const url = location.search;
-const allTheParameters = new URLSearchParams(url);
-const id = allTheParameters.get("productID");
 
-const deleteEvent = function () {
-  fetch(apiUrl + "/" + id, {
+const deleteEvent = function (id) {
+  console.log(apiUrl + id);
+  fetch(apiUrl + id, {
     method: "DELETE",
     headers: {
       Authorization:
@@ -25,7 +23,7 @@ const deleteEvent = function () {
     .then((res) => {
       if (res.ok) {
         alert("Il doggo non c'è più!");
-        location.assign("../Home/home.html");
+        location.assign("./home.html");
       } else {
         throw new Error(`Abbiamo il seguente problema: ${res.status}`);
       }
@@ -68,7 +66,7 @@ const addCards = function () {
                     <div class="d-flex justify-content-evenly">
                     <a href="../BackOffice/BackOffice.html?productID=${product._id}" class="btn btn-warning text-light my-1 w-25"><i class="bi bi-pencil-square"></i></a>
                     <a href="../Details/details.html?productID=${product._id}" class="btn btn-success text-light my-1 w-auto">Vai ai dettagli</a>
-                    <button onclick="deleteEvent() href="./home.html?productID=${product._id}" class="btn btn-danger text-light my-1 w-25"><i class="bi bi-trash-fill"></i></button>
+                    <button onclick="deleteEvent('${product._id}')" class="btn btn-danger text-light my-1 w-25"><i class="bi bi-trash-fill"></i></button>
                     </div>
                 </div>
             </div>
