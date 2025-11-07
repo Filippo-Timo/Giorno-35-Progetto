@@ -1,6 +1,6 @@
 const getYearInFooter = function () {
   const footer = document.getElementById("year");
-  footer.innerText = new Date().getFullYear(); // 2025
+  footer.innerText = new Date().getFullYear();
 };
 
 getYearInFooter();
@@ -27,7 +27,6 @@ const deleteEvent = function () {
         alert("Il doggo non c'è più!");
         location.assign("../Home/home.html");
       } else {
-        // problema nell'eliminazione
         throw new Error(`Abbiamo il seguente problema: ${res.status}`);
       }
     })
@@ -69,7 +68,7 @@ const addCards = function () {
                     <div class="d-flex justify-content-evenly">
                     <a href="../BackOffice/BackOffice.html?productID=${product._id}" class="btn btn-warning text-light my-1 w-25"><i class="bi bi-pencil-square"></i></a>
                     <a href="../Details/details.html?productID=${product._id}" class="btn btn-success text-light my-1 w-auto">Vai ai dettagli</a>
-                    <button onclick="deleteEvent()" href="./home.html?productID=${product._id}" class="btn btn-danger text-light my-1 w-25"><i class="bi bi-trash-fill"></i></button>
+                    <button onclick="deleteEvent() "href="./home.html?productID=${product._id}" class="btn btn-danger text-light my-1 w-25"><i class="bi bi-trash-fill"></i></button>
                     </div>
                 </div>
             </div>

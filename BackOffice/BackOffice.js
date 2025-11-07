@@ -1,6 +1,6 @@
 const getYearInFooter = function () {
   const footer = document.getElementById("year");
-  footer.innerText = new Date().getFullYear(); // 2025
+  footer.innerText = new Date().getFullYear();
 };
 
 getYearInFooter();
@@ -29,7 +29,6 @@ if (id) {
       }
     })
     .then((productDetails) => {
-      // ho ottenuto i dettagli, ripopolo ora il form
       document.getElementById("name").value = productDetails.name;
       document.getElementById("description").value = productDetails.description;
       document.getElementById("brand").value = productDetails.brand;

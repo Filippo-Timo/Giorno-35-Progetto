@@ -1,6 +1,6 @@
 const getYearInFooter = function () {
   const footer = document.getElementById("year");
-  footer.innerText = new Date().getFullYear(); // 2025
+  footer.innerText = new Date().getFullYear();
 };
 
 getYearInFooter();
@@ -55,7 +55,6 @@ const deleteEvent = function () {
         alert("Il doggo non c'è più!");
         location.assign("../Home/home.html");
       } else {
-        // problema nell'eliminazione
         throw new Error(`Abbiamo il seguente problema: ${res.status}`);
       }
     })
