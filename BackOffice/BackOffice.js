@@ -14,8 +14,13 @@ const allTheParameters = new URLSearchParams(url);
 const id = allTheParameters.get("productID");
 
 if (id) {
-  // vuol dire che ID non è null
-  fetch(apiUrl + "/" + id)
+  fetch(apiUrl + "/" + id, {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTBkZDJhZmY0YmQ0NzAwMTU4NWIyNDUiLCJpYXQiOjE3NjI1MTM1ODMsImV4cCI6MTc2MzcyMzE4M30.3-s9XE4nRqf3YMobngSTcyTyh52oGplj1cbxteUyeM8",
+      "Content-Type": "application/json",
+    },
+  })
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -73,7 +78,7 @@ form.addEventListener("submit", (e) => {
     finalUrl = apiUrl;
   }
 
-  fetch(apiUrl, {
+  fetch(finalUrl, {
     method: id ? "PUT" : "POST",
     body: JSON.stringify(newProduct),
     headers: {
